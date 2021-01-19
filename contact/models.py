@@ -8,3 +8,6 @@ class Contact(models.Model):
     adress = models.CharField(max_length=100)
     email = models.EmailField()
     number =  PhoneField(blank=True, help_text='Contact phone number')
+
+    def __str__(self):
+        return self.full_name

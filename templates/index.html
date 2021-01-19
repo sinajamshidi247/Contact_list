@@ -24,221 +24,31 @@
 			</form>
 
 			<!--  ADD-CONTACT BUTTON/ICON -->
-			<a href="edit.html"><i class="fas fa-plus-circle add"></i></a>
+			<a href={% url 'contact:add'%}><i class="fas fa-plus-circle add"></i></a>
 		</header>
 
 		<!--  CONTACT LIST -->
 		<section class="contacts-library">
 			<ul class="contacts-list">
+				{% for contact in contacts %}
+				<a href={% url 'contact:profile' contact.id %}>
+					<div class="contact-section">
+						<li class="list__item">
+							<p class="contact-name">{{contact.full_name}}</p>
+							<p class="relationship">{{contact.realation}}</p>
+						</li>
+
+						<li class="list__item">
+							<i class="fas fa-phone"></i>
+							<i class="fas fa-sms text"></i>
+						</li>
+					</div>
+				</a>
+
+				<hr>
+				{% endfor %}
+
 				
-				<a href="contact-profile.html">
-					<div class="contact-section">
-						<li class="list__item">
-							<p class="contact-name">John Doe</p>
-							<p class="relationship">Friend</p>
-						</li>
-
-						<li class="list__item">
-							<i class="fas fa-phone"></i>
-							<i class="fas fa-sms text"></i>
-						</li>
-					</div>
-				</a>
-
-				<hr>
-
-				<a href="contact-profile.html">
-					<div class="contact-section">
-						<li class="list__item">
-							<p class="contact-name">Jane Doe</p>
-							<p class="relationship">Friend</p>
-						</li>
-
-						<li class="list__item">
-							<i class="fas fa-phone"></i>
-							<i class="fas fa-sms text"></i>
-						</li>
-					</div>
-				</a>
-
-				<hr>
-
-				<a href="contact-profile.html">
-					<div class="contact-section">
-						<li class="list__item">
-							<p class="contact-name">Alex Blakely</p>
-							<p class="relationship">Friend</p>
-						</li>
-
-						<li class="list__item">
-							<i class="fas fa-phone"></i>
-							<i class="fas fa-sms text"></i>
-						</li>
-					</div>
-				</a>
-
-				<hr>
-
-				<a href="contact-profile.html">
-					<div class="contact-section">
-						<li class="list__item">
-							<p class="contact-name">Sarah Smith</p>
-							<p class="relationship">Family</p>
-						</li>
-						<li class="list__item">
-							<i class="fas fa-phone"></i>
-							<i class="fas fa-sms text"></i>
-						</li>
-					</div>
-				</a>
-
-				<hr>
-
-				<a href="contact-profile.html">
-					<div class="contact-section">
-						<li class="list__item">
-							<p class="contact-name">Johann Brooke</p>
-							<p class="relationship">Family</p>
-						</li>
-						<li class="list__item">
-							<i class="fas fa-phone"></i>
-							<i class="fas fa-sms text"></i>
-						</li>
-					</div>
-				</a>
-
-				<hr>
-
-
-				<a href="contact-profile.html">
-					<div class="contact-section">
-						<li class="list__item">
-							<p class="contact-name">Sam Peterson</p>
-							<p class="relationship">Family</p>
-						</li>
-						<li class="list__item">
-							<i class="fas fa-phone"></i>
-							<i class="fas fa-sms text"></i>
-						</li>
-					</div>
-				</a>
-
-				<hr>
-
-				<a href="contact-profile.html">
-					<div class="contact-section">
-						<li class="list__item">
-							<p class="contact-name">Sebastion Agnew</p>
-							<p class="relationship">Work</p>
-						</li>
-						<li class="list__item">
-							<i class="fas fa-phone"></i>
-							<i class="fas fa-sms text"></i>
-						</li>
-					</div>
-				</a>
-
-				<hr>
-
-				<a href="contact-profile.html">
-					<div class="contact-section">
-						<li class="list__item">
-							<p class="contact-name">John Doe</p>
-							<p class="relationship">Friend</p>
-						</li>
-						<li class="list__item">
-							<i class="fas fa-phone"></i>
-							<i class="fas fa-sms text"></i>
-						</li>
-					</div>
-				</a>
-
-				<hr>
-				<div class="contact-section">
-					<li class="list__item">
-						<p class="contact-name">Jane Doe</p>
-						<p class="relationship">Friend</p>
-					</li>
-					<li class="list__item">
-						<i class="fas fa-phone"></i>
-						<i class="fas fa-sms text"></i>
-					</li>
-				</div>
-
-				<hr>
-
-				<a href="contact-profile.html">
-					<div class="contact-section">
-						<li class="list__item">
-							<p class="contact-name">Alex Blakely</p>
-							<p class="relationship">Friend</p>
-						</li>
-						<li class="list__item">
-							<i class="fas fa-phone"></i>
-							<i class="fas fa-sms text"></i>
-						</li>
-					</div>
-				</a>
-
-				<hr>
-
-				<a href="contact-profile.html">
-					<div class="contact-section">
-						<li class="list__item">
-							<p class="contact-name">Sarah Smith</p>
-							<p class="relationship">Family</p>
-						</li>
-						<li class="list__item">
-							<i class="fas fa-phone"></i>
-							<i class="fas fa-sms text"></i>
-						</li>
-					</div>
-				</a>
-
-				<hr>
-
-				<a href="contact-profile.html">
-					<div class="contact-section">
-						<li class="list__item">
-							<p class="contact-name">Johann Brooke</p>
-							<p class="relationship">Family</p>
-						</li>
-						<li class="list__item">
-							<i class="fas fa-phone"></i>
-							<i class="fas fa-sms text"></i>
-						</li>
-					</div>
-				</a>
-
-				<hr>
-
-				<a href="contact-profile.html">
-					<div class="contact-section">
-						<li class="list__item">
-							<p class="contact-name">Sam Peterson</p>
-							<p class="relationship">Family</p>
-						</li>
-						<li class="list__item">
-							<i class="fas fa-phone"></i>
-							<i class="fas fa-sms text"></i>
-						</li>
-					</div>
-				</a>
-
-				<hr>
-
-				<a href="contact-profile.html">
-					<div class="contact-section">
-						<li class="list__item">
-							<p class="contact-name">Sebastion Agnew</p>
-							<p class="relationship">Work</p>
-						</li>
-						<li class="list__item">
-							<i class="fas fa-phone"></i>
-							<i class="fas fa-sms text"></i>
-						</li>
-					</div>
-				</a>
 			</ul>
 		</section>
 	</div>
