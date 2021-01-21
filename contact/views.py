@@ -8,9 +8,9 @@ def index(request):
 
     contacts = Contact.objects.all()
 
-    search_input = request.GET.get('search_area')
+    search_input = request.GET.get('search-area')
     if search_input :
-        contacts = Contact.objects.filter(full_name_icontains=search_input)
+        contacts = Contact.objects.filter(full_name__icontains=search_input)
     else:
         contacts = Contact.objects.all()
         search_input = ''

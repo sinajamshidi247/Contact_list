@@ -47,9 +47,11 @@
 				</a>
 
 				<hr>
-				{% endfor %}
-
 				
+				{% empty %}
+				<h3 style ='color:white','padding:20px'>No Contacts found...</h3>
+
+				{% endfor %}
 			</ul>
 		</section>
 	</div>
